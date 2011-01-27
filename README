@@ -1,0 +1,41 @@
+Tweet Scheduler
+===============
+
+*Outline:*
+
+Ruby on Rails-based Tweet scheduling app
+
+*Current status*
+
+Creating core models and app structure
+
+*Progress:*
+
++ Completed first scenario of adding_tweets feature
+
+*To-do*
+
++ Complete remaining scenarios of adding_tweets feature
+
+Version
+-------
+2011-01-27-0.1.0
+
+Branch
+------
+master
+
+Environment
+-----------
++ Rails 3.0.1
++ Ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10.4.0]
+
+Gems
+----
+
+Plugins
+-------
+
+
+
+
