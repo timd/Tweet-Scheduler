@@ -31,11 +31,13 @@ Feature: Adding tweets
             | This is a dummy tweet | 2010-01-31 00:00:00 | false  |
             | This is another tweet | 2010-01-33 00:00:00 | true   |
         
-	@wip
 	Scenario: Adding overly-long tweet content
-	    Given new content that is longer than 140 characters
-        When I try to save the content
-        And it should prevent the content from being saved
+	  Given I am on the New Tweets page
+	  When I create a tweet with content that has 140 characters
+	  When I press "Create Tweet"
+	  Then the tweet should not be saved
+	  And I should be on the New Tweets page
+	  And I should see an error
 
     @wip
     Scenario: Adding overly-short tweet content

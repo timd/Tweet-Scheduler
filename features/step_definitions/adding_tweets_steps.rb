@@ -47,3 +47,23 @@ Then /^I should see the following tweets:$/ do |table|
       page.should have_xpath("//td", :text => content)
   end
 end
+
+
+When /^I create a tweet with content that has (\d+) characters$/ do |tweet_length|
+
+  content = "a" * tweet_length.to_i
+
+  Factory.create(:tweet, :content => content, :tweet_time => "2010-01-31 00:00:00", :repeat => false)
+
+  Tweet.update_attributes( :content => content ).should_not be_valid
+
+end
+
+Then /^the tweet should not be saved$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see an error$/ do
+  pending # express the regexp above with the code you wish you had
+end
+

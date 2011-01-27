@@ -13,4 +13,5 @@ describe Tweet do
     it { should have_a( :tweet_time ) }
     it { should have_a( :repeat ) }
   end
+  
 end
