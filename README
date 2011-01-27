@@ -11,7 +11,7 @@ http://www.adoptioncurve.net/projects/tweetscheduler
 
 *Current status*
 
-Creating core models and app structure
+Working through adding_tweets feature
 
 *Progress:*
 
@@ -27,7 +27,7 @@ Version
 
 Branch
 ------
-master
+creating_tweets
 
 Environment
 -----------
