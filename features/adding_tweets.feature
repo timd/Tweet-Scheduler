@@ -33,14 +33,17 @@ Feature: Adding tweets
         
 	Scenario: Adding overly-long tweet content
 	  Given I am on the New Tweets page
-	  When I create a tweet with content that has 140 characters
+	  When I create a tweet with content that has 141 characters
 	  When I press "Create Tweet"
 	  Then the tweet should not be saved
 	  And I should be on the New Tweets page
 	  And I should see an error
 
-    @wip
-    Scenario: Adding overly-short tweet content
-    	Given new content that is less than XXX characters
-    	When I try to save the content
-    	And it should warn me that the content is short
+  @wip
+  Scenario: Adding overly-short tweet content
+	  Given I am on the New Tweets page
+	  When I create a tweet with content that has 0 characters
+	  When I press "Create Tweet"
+	  Then the tweet should not be saved
+	  And I should be on the New Tweets page
+	  And I should see an error

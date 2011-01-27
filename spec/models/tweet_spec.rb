@@ -14,4 +14,8 @@ describe Tweet do
     it { should have_a( :repeat ) }
   end
   
+  it "should not allow tweet content greater than 140 characters"
+  
+  it "should not allow tweet content of less than 1 character"
+  
 end
