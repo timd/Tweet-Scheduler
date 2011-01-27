@@ -4,6 +4,10 @@ Tweet Scheduler
 *Outline:*
 
 Ruby on Rails-based Tweet scheduling app
+Built using a Cucumber-based BDD/TDD approach
+
+*URL*
+http://www.adoptioncurve.net/projects/tweetscheduler
 
 *Current status*
 
