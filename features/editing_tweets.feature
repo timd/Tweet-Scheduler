@@ -30,8 +30,8 @@ Feature: Editing tweets
       When I press "Update Tweet"
       Then the tweet should be saved
       And the content should be updated to "This is some amended content"
-      And I should see the "Show tweet" page
-      And I should see a "Successfully updated" message
+      Then I should be on the "Show Tweet" page
+      And I should see a "Tweet was successfully updated." message
 
     @javascript
     Scenario: Editing tweet times

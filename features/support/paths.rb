@@ -20,6 +20,9 @@ module NavigationHelpers
     when /the "Edit Tweet" page/
         # the @tweet object was created in the step
         edit_tweet_path(@tweet)
+        
+    when /the "Show Tweet" page/
+        tweet_path(@tweet)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
