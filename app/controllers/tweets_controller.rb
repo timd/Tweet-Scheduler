@@ -61,6 +61,7 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       if @tweet.update_attributes(params[:tweet])
+        
         format.html { redirect_to(@tweet, :notice => 'Tweet was successfully updated.') }
         format.xml  { head :ok }
       else

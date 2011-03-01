@@ -10,8 +10,6 @@ When /^I click to edit the first tweet$/ do
     @tweet = @tweets_for_test[0]
     @original_content = @tweet.content
     
-    puts ">>> Tweet.repeat = " + @tweet.repeat.to_s
-  
     within(:xpath, '//tr[2]') do 
       click_link("edit") 
     end
@@ -64,11 +62,10 @@ When /^I edit the tweet time to "([^"]*)"$/ do |time|
 end
 
 When /^I toggle the 'repeat' checkbox$/ do
-  puts ">>> Toggling"
   @original_repeat_status = @tweet.repeat
-  uncheck "tweet_repeat"
+  check "tweet_repeat"
 end
 
 Then /^the tweet repeat status should be "([^"]*)"$/ do |status|
-  puts ">>> " + @tweet.repeat.to_s
+  #
 end
