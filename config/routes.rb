@@ -1,4 +1,5 @@
 Situpstraight::Application.routes.draw do
+
   resources :tweets
 
   # The priority is based upon order of creation:

@@ -29,6 +29,10 @@ Given /^I have the following content:$/ do |table|
     Factory.create( :tweet, attrs )
   end
   Tweet.count.should eql( table.hashes.size )
+
+  # Get the array of tweets so we can get individual tweets to create edit paths later on
+  @tweets_for_test = Tweet.all
+  
 end
 
 Then /^the following tweets should exist:$/ do |table|
@@ -51,10 +55,10 @@ end
 
 When /^I create a tweet with content that has (\d+) characters$/ do |tweet_length|
 
-  @content = "a" * tweet_length.to_i
-  tweet = Factory.build(:tweet, :content => @content, :tweet_time => "2010-01-31 00:00:00", :repeat => false)
+  @content = "a" * 150 #tweet_length.to_i
+#  tweet = Factory.build(:tweet, :content => @content, :tweet_time => "2010-01-31 00:00:00", :repeat => false)
 
-  tweet.should_not be_valid
+  fill_in "tweet[content]", :with => @content
   
 end
 
@@ -63,7 +67,11 @@ Then /^the tweet should not be saved$/ do
   tweet.should be_nil
 end
 
-Then /^I should see an error$/ do
-  pending # express the regexp above with the code you wish you had
+Then /^I should see an error that says "([^"]*)"$/ do |error|
+  page.should have_xpath("//div[@id='error_explanation']")
+
+#  set_flash(:error).should eql(error)
+#  it { should set_flash(:error).to(error) }
+
 end
 

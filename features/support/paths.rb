@@ -14,8 +14,12 @@ module NavigationHelpers
     when /the New Tweets page/
         new_tweet_path
         
-    when /the List Tweets page/
+    when /the "List Tweets" page/
         tweets_path
+        
+    when /the "Edit Tweet" page/
+        # the @tweet object was created in the step
+        edit_tweet_path(@tweet)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -4,7 +4,7 @@ Feature: Adding tweets
     In order to create tweets
     I want to be able to input tweet content
     
-    @adding
+    @javascript
     Scenario: Viewing the create tweet page
         Given I am on the New Tweets page
         Then I should see a form to enter the tweet details
@@ -13,6 +13,7 @@ Feature: Adding tweets
         And I should see a checkbox for repeat
         And I should see a button to save the tweet
 
+    @javascript
     Scenario: Creating the tweet
         Given I am on the New Tweets page
         And I have the following content:
@@ -31,19 +32,18 @@ Feature: Adding tweets
             | This is a dummy tweet | 2010-01-31 00:00:00 | false  |
             | This is another tweet | 2010-01-33 00:00:00 | true   |
         
+	@javascript
 	Scenario: Adding overly-long tweet content
 	  Given I am on the New Tweets page
 	  When I create a tweet with content that has 141 characters
-	  When I press "Create Tweet"
+	  And I press "Create Tweet"
 	  Then the tweet should not be saved
-	  And I should be on the New Tweets page
-	  And I should see an error
+	  And I should see an error that says "can't be more than 140 characters long!"
 
-  @wip
+  @javascript
   Scenario: Adding overly-short tweet content
 	  Given I am on the New Tweets page
 	  When I create a tweet with content that has 0 characters
-	  When I press "Create Tweet"
+	  And I press "Create Tweet"
 	  Then the tweet should not be saved
-	  And I should be on the New Tweets page
-	  And I should see an error
+	  And I should see an error that says "Content should be at least one character"
