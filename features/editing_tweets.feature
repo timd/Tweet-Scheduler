@@ -59,7 +59,5 @@ Feature: Editing tweets
     Scenario: Deleting a tweet
       When I go to the "List Tweets" page
       And I click to delete the first tweet
-      Then I should see an "Are you sure" message
-      When I click "OK"
       Then the tweet should be deleted
       And I should be on the "List Tweets" page

@@ -19,7 +19,7 @@
     <td id="tweet_repeat"><%= tweet.repeat %></td>
     <td id="show"><%= link_to 'Show', tweet, :id => 'show' %></td>
     <td id="edit"><%= link_to 'Edit', edit_tweet_path(tweet), :id => 'edit' %></td>
-    <td id="destroy"><%= link_to 'Destroy', tweet, :confirm => 'Are you sure?', :method => :delete, :id => 'destroy' %></td>
+    <td id="destroy"><%= link_to 'Destroy', tweet, :method => :delete, :id => 'destroy' %></td>
   </tr>
 <% end %>
 </table>
