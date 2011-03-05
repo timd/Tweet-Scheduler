@@ -26,7 +26,7 @@ Feature: Adding tweets
             | content               | tweet_time          | repeat |
             | This is a dummy tweet | 2010-01-31 00:00:00 | false  |
             | This is another tweet | 2010-01-33 00:00:00 | true   |
-        Then I should be on the List Tweets page
+        Then I should be on the "List Tweets" page
         And I should see the following tweets:
             | content               | tweet_time          | repeat |
             | This is a dummy tweet | 2010-01-31 00:00:00 | false  |
