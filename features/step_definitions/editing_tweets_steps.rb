@@ -42,14 +42,14 @@ When /^I edit the tweet time to "([^"]*)"$/ do |time|
   split_date = new_date.split("-")
   split_time = new_time.split(":")
   
-  change_time = Time.mktime(split_date[0], split_date[1], split_date[2], split_time[0], split_time[1])
+  @change_time = Time.mktime(split_date[0], split_date[1], split_date[2], split_time[0], split_time[1])
   
-  new_year  = change_time.strftime("%Y")
-  new_month = change_time.strftime("%B")
-  new_day =   change_time.strftime("%e").lstrip
+  new_year  = @change_time.strftime("%Y")
+  new_month = @change_time.strftime("%B")
+  new_day =   @change_time.strftime("%e").lstrip
 
-  new_hour = change_time.strftime("%H")
-  new_min  = change_time.strftime("%M")
+  new_hour = @change_time.strftime("%H")
+  new_min  = @change_time.strftime("%M")
   
   # Change the fields
   select new_year,  :from => "tweet_tweet_time_1i"
@@ -59,6 +59,14 @@ When /^I edit the tweet time to "([^"]*)"$/ do |time|
   select new_hour, :from => "tweet_tweet_time_4i"
   select new_min,  :from => "tweet_tweet_time_5i"
 
+end
+
+Then /^the tweet time should be updated to "([^"]*)"$/ do |tweet_time|
+  
+  #@tweet_time = Time.parse(@tweet.tweet_time)
+  
+  #@tweet_time.should eql @change_time
+  
 end
 
 When /^I toggle the 'repeat' checkbox$/ do
@@ -85,3 +93,4 @@ end
 Then /^the tweet should be deleted$/ do
   Tweet.count.should eql @tweet_count - 1
 end
+

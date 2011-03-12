@@ -18,19 +18,15 @@ Feature: Adding tweets
         Given I am on the New Tweets page
         And I have the following content:
             | content               | tweet_time          | repeat |
-            | This is a dummy tweet | 2010-01-31 00:00:00 | false  |
-            | This is another tweet | 2010-01-33 00:00:00 | true   |
+            | This is a dummy tweet | 2011-10-31 00:00:00 | false  |
+            | This is another tweet | 2011-10-30 00:00:00 | true   |
         When I fill in the tweet details as "This is a test tweet"
         When I press "Create Tweet"
         Then the following tweets should exist:
             | content               | tweet_time          | repeat |
-            | This is a dummy tweet | 2010-01-31 00:00:00 | false  |
-            | This is another tweet | 2010-01-33 00:00:00 | true   |
-        Then I should be on the "List Tweets" page
-        And I should see the following tweets:
-            | content               | tweet_time          | repeat |
-            | This is a dummy tweet | 2010-01-31 00:00:00 | false  |
-            | This is another tweet | 2010-01-33 00:00:00 | true   |
+            | This is a dummy tweet | 2011-10-31 00:00:00 | false  |
+            | This is another tweet | 2011-10-30 00:00:00 | true   |
+        And I should be on the "List Tweets" page
         
 	@javascript
 	Scenario: Adding overly-long tweet content

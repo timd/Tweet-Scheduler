@@ -7,8 +7,8 @@ Feature: Editing tweets
     Background:
       Given I have the following content:
         | content               | tweet_time          | repeat |
-        | This is a dummy tweet | 2011-01-31 01:02:03 | true   |
-        | This is another tweet | 2011-03-01 11:22:33 | false  |
+        | This is a dummy tweet | 2011-11-31 01:02:03 | true   |
+        | This is another tweet | 2011-11-01 11:22:33 | false  |
 
     @javascript
     Scenario: Listing the tweets
@@ -37,10 +37,10 @@ Feature: Editing tweets
     Scenario: Editing tweet times
       When I go to the "List Tweets" page
       When I click to edit the first tweet
-      And I edit the tweet time to "2010-05-04 03:02:01"
+      And I edit the tweet time to "2011-05-04 03:02:01"
       When I press "Update Tweet"
       Then the tweet should be saved
-      And the tweet time should be updated to "2010-05-04 03:02:01"
+      And the tweet time should be updated to "2011-05-04 03:02:01"
       And I should see a "Tweet was successfully updated." message
 
     @javascript

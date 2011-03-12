@@ -44,13 +44,6 @@ Then /^the following tweets should exist:$/ do |table|
     end
 end
 
-Then /^I should see the following tweets:$/ do |table|
-  # table is a Cucumber::Ast::Table
-  table.rows.each do |row|
-      content, tweet_time, repeat = row
-      page.should have_xpath("//td", :text => content)
-  end
-end
 
 
 When /^I create a tweet with content that has (\d+) characters$/ do |tweet_length|
